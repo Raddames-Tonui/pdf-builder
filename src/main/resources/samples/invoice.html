@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Invoice</title>
+  <style>
+    /* === General Styling === */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: #fff;
+      color: #333;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    header, footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header img {
+      max-width: 120px;
+    }
+
+    h1, h2 {
+      margin: 0;
+    }
+
+    /* === Invoice Info === */
+    .invoice-metadata, .client-info {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .invoice-metadata div, .client-info div {
+      width: 48%;
+    }
+
+    /* === Table Styling === */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table thead {
+      background-color: #f4f4f4;
+    }
+
+    table th, table td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    .total {
+      text-align: right;
+    }
+
+    /* === Notes and Footer === */
+    .notes {
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 40px;
+    }
+
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      header, footer {
+        page-break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- === HEADER SECTION === -->
+  <header>
+    <!-- Your company logo -->
+    <img src="https://github.com/Raddames-Tonui/tatua-website-starter/blob/main/assets/tatua-logo.png?raw=true" alt="Company Logo" />
+    <h1>Company Name</h1>
+    <p>123 Business Rd., Nairobi, Kenya<br>Email: info@company.com | Phone: +254-700-000000</p>
+  </header>
+
+  <!-- === CLIENT + INVOICE METADATA === -->
+  <section class="invoice-metadata">
+    <div>
+      <h2>Invoice</h2>
+      <p><strong>Invoice #:</strong> INV-0001</p>
+      <p><strong>Issue Date:</strong> 17 July 2025</p>
+      <p><strong>Due Date:</strong> 31 July 2025</p>
+    </div>
+    <div>
+      <h2>Billed To</h2>
+      <p>Client Name</p>
+      <p>456 Client Ave.</p>
+      <p>client@example.com</p>
+    </div>
+  </section>
+
+  <!-- === INVOICE ITEMS TABLE === -->
+  <table>
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Qty</th>
+        <th>Unit Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Web Development Services</td>
+        <td>10</td>
+        <td>KES 5,000</td>
+        <td>KES 50,000</td>
+      </tr>
+      <tr>
+        <td>Hosting (1 Year)</td>
+        <td>1</td>
+        <td>KES 10,000</td>
+        <td>KES 10,000</td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" class="total"><strong>Subtotal:</strong></td>
+        <td>KES 60,000</td>
+      </tr>
+      <tr>
+        <td colspan="3" class="total"><strong>Tax (16%):</strong></td>
+        <td>KES 9,600</td>
+      </tr>
+      <tr>
+        <td colspan="3" class="total"><strong>Total:</strong></td>
+        <td><strong>KES 69,600</strong></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <!-- === NOTES SECTION === -->
+  <div class="notes">
+    <p><strong>Notes:</strong> Payment is due within 14 days. Late payments may incur a 2% penalty.</p>
+    <p>Thank you for your business!</p>
+  </div>
+
+  <!-- === FOOTER SECTION === -->
+  <footer>
+    <p>&copy; 2025 Company Name. All rights reserved.</p>
+    <p>Website: www.company.com | Email: support@company.com</p>
+  </footer>
+
+</body>
+</html>
