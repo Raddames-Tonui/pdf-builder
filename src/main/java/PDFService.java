@@ -1,4 +1,5 @@
 import com.openhtmltopdf.pdfboxout.PdfRendererBuilder;
+import com.openhtmltopdf.svgsupport.BatikSVGDrawer;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -49,6 +50,16 @@ public class PDFService {
 
             // Supply HTML content to be converted
             builder.withHtmlContent(htmlContent, null);
+
+            // If there are SVGS
+            builder.useSVGDrawer(new BatikSVGDrawer());
+            builder.useUriResolver((baseUri, uri) -> {
+                if (uri.startsWith("assets/")) {
+                    return PDFService.class.getClassLoader().getResource(uri).toString(); // converts to file:///...
+                }
+                return uri;
+            });
+
 
             // Set the destination stream where the PDF will be written
             builder.toStream(os);

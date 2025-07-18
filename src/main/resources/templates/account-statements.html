@@ -1,10 +1,272 @@
-<!--<!DOCTYPE html>-->
-<!DOCTYPE definition [<!ENTITY amp "&#38;">]>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Account Statements</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Account Statements</title>
+  <style type="text/css">
+    @page {
+      size: A4 portrait;
+      margin: 0.7in;
+      @bottom-right {
+        content: "Page " counter(page) " of " counter(pages);
+        font-size: 10pt;
+      }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      width: 100%;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #32CD32;
+    }
+
+    .logo {
+      width: 170px;
+    }
+
+    .sacco-info {
+      text-align: right;
+      vertical-align: top;
+    }
+
+    .sacco-info .title {
+      font-weight: normal;
+      font-size: 12pt;
+    }
+
+    .sacco-date {
+      text-align: right;
+      vertical-align: top;
+    }
+
+    .sacco-date .date {
+      font-size: 10pt;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    /* Client Details */
+    .client-details {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .left, .right {
+      vertical-align: top;
+      padding: 10px;
+    }
+
+    .left {
+      width: 60%;
+    }
+
+    .right {
+      width: 40%;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .account-info {
+      margin-top: 10px;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .account-info td {
+      padding: 4px 0;
+    }
+
+    .green {
+      color: #32CD32;
+    }
+
+    .red {
+      color: #D22F2F;
+    }
+
+    .total {
+      font-weight: bold;
+      border-top: 2px solid#32CD32;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .contact-info {
+      line-height: 1.7em;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* Transactions Table */
+    .transactions {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .transactions th, .transactions td {
+      border: 1px solid #D3D3D3;
+      padding: 6px;
+      text-align: left;
+
+    }
+
+    .transactions th {
+      background-color: #32CD32;
+      color: white;
+    }
+
+    .transactions td {
+      text-align: right;
+    }
+
+    .transactions td.description,
+    .transactions td.docno,
+    .transactions td.date {
+      text-align: left;
+    }
+
+    /* Contact Box */
+    .contact-box {
+        width: 100%;    
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+  </style>
 </head>
+
 <body>
 
+  <!-- Header -->
+  <table class="header">
+    <tr>
+      <td>
+        <img class="logo" src="assets/ukulima-sacco-logo.png" alt="UKULIMA SACCO Logo" />
+      </td>
+      <td class="sacco-info">
+        <div class="title">UKULIMA SACCO</div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="sacco-date">
+        <div class="date">Date Issued: 3 June 2022</div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Client and Account Summary -->
+  <table class="client-details">
+    <tr>
+      <!-- Left Side -->
+      <td class="left">
+        <div class="title">Mr. John Juma</div>
+        <div>+254722368794</div>
+        <br />
+        <div><strong>1 Jan 2022 to 2 June 2022</strong></div>
+        <div class="bold">FOSA Savings Account (5050123278000)</div>
+        <hr style="margin: 10px 0; border: 1px solid #32CD32;" />
+
+        <table class="account-info">
+          <tr>
+            <td>Opening Balance</td>
+            <td style="text-align: right;">25,012.49</td>
+          </tr>
+          <tr>
+            <td>Credits</td>
+            <td class="green" style="text-align: right;">1,336,895.23</td>
+          </tr>
+          <tr>
+            <td>Debits</td>
+            <td class="red" style="text-align: right;">1,276,787.86</td>
+          </tr>
+          <tr>
+            <td class="total">Closing Balance</td>
+            <td class="total" style="text-align: right;">65,119.86</td>
+          </tr>
+        </table>
+      </td>
+
+      <!-- Right Side -->
+      <td class="right">
+        <div class="bold">Contact Information</div>
+        <div class="contact-info">
+          <div><strong>Email:</strong> <a href="mailto:info@ukulimasacco.coop">info@ukulimasacco.coop</a></div>
+          <div><strong>Website:</strong> <a href="https://ukulimasacco.coop" target="_blank">https://ukulimasacco.coop</a></div>
+          <div><strong>Tel:</strong> 0709943000</div>
+          <br />
+          <div>Contact us for questions, on this statement, change<br />
+          of personal information, and general inquiries.</div>
+          <br />
+          <div>Mon - Fri: 8:30am - 5:00 PM</div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+    <hr style="margin: 5px 0 2px 0; border: 1px solid #32CD32;" />
+  <!-- Transactions Table -->
+  <table class="transactions">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Doc No</th>
+        <th>Description</th>
+        <th>Credit</th>
+        <th>Debit</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="date">7 Jan 2022</td>
+        <td class="docno">QA749QPRFM</td>
+        <td class="description">Loan Repayment</td>
+        <td>20,000.00</td>
+        <td>0.00</td>
+        <td>25,012.49</td>
+      </tr>
+      <tr>
+        <td class="date">7 Jan 2022</td>
+        <td class="docno">QA749QPRFM</td>
+        <td class="description">Loan Repayment Fee</td>
+        <td>0.00</td>
+        <td>5.00</td>
+        <td>25,007.49</td>
+      </tr>
+      <tr>
+        <td class="date">7 Jan 2022</td>
+        <td class="docno">QA749QPRFM</td>
+        <td class="description">Loan Repayment</td>
+        <td>20,000.00</td>
+        <td>0.00</td>
+        <td>5,007.49</td>
+      </tr>
+      <!-- Additional rows can be added here -->
+    </tbody>
+  </table>
+
+  <!-- Footer Contact Box -->
+  <table class="contact-box">
+    <tr>
+        <td>Account Balance</td>
+        <td style="text-align: right;">34093409</td>
+    </tr>
+  </table>
 </body>
 </html>
