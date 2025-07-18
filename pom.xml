@@ -72,10 +72,18 @@
 
 <!--  Extracting data from the sample-->
         <!-- Tabula -->
+        <!-- Tabula for PDF table extraction -->
         <dependency>
             <groupId>com.github.tabulapdf</groupId>
             <artifactId>tabula</artifactId>
             <version>1.0.4</version>
+        </dependency>
+
+        <!-- OpenCSV for CSV writing -->
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.7.1</version>
         </dependency>
 
         <!-- Jackson (for JSON) -->
