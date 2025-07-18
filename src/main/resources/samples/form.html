@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Bank Account Opening Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style type="text/css">
+    @page {
+      size: A4 portrait;
+      margin: 20mm;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      color: #000;
+    }
+
+    .page {
+      background: #fff;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      padding: 20mm;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      page-break-after: always;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    header img {
+      max-height: 80px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      padding-bottom: 10px;
+    }
+
+    fieldset {
+      margin-bottom: 20px;
+      border: 1px solid #aaa;
+      padding: 10px;
+    }
+
+    legend {
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.95em;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .signature-line {
+      margin-top: 40px;
+    }
+
+    .signature-line p {
+      border-top: 1px dotted #000;
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    .official-use {
+      background: #e9e9e9;
+      padding: 10px;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Page 1 -->
+  <div class="page">
+    <header>
+      <img src="../../assets/tatua-logo.png" alt="Bank Logo" />
+      <h1>Bank Account Opening Form</h1>
+    </header>
+
+    <form action="/submit-account" method="POST">
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="fullName">Full Name *</label>
+        <input type="text" id="fullName" name="fullName" required="required" />
+
+        <label for="dob">Date of Birth *</label>
+        <input type="date" id="dob" name="dob" required="required" />
+
+        <label for="nationalID">National ID / Passport No. *</label>
+        <input type="text" id="nationalID" name="nationalID" required="required" />
+
+        <label for="gender">Gender *</label>
+        <select id="gender" name="gender" required="required">
+          <option value="">-- Select --</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+
+        <label for="maritalStatus">Marital Status</label>
+        <select id="maritalStatus" name="maritalStatus">
+          <option value="">-- Select --</option>
+          <option>Single</option>
+          <option>Married</option>
+          <option>Divorced</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contact Details</legend>
+
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required="required" />
+
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" required="required" />
+
+        <label for="address">Current Address *</label>
+        <textarea id="address" name="address" required="required"></textarea>
+
+        <label for="postal">Postal Address</label>
+        <input type="text" id="postal" name="postal" />
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="page page-break">
+    <header>
+      <img src="logo.png" alt="Bank Logo" />
+      <h1>Bank Account Opening - Continued</h1>
+    </header>
+
+    <fieldset>
+      <legend>Employment & Financial Info</legend>
+
+      <label for="employer">Current Employer</label>
+      <input type="text" id="employer" name="employer" />
+
+      <label for="occupation">Occupation</label>
+      <input type="text" id="occupation" name="occupation" />
+
+      <label for="monthlyIncome">Estimated Monthly Income (KES)</label>
+      <input type="number" id="monthlyIncome" name="monthlyIncome" />
+
+      <label for="sourceOfFunds">Source of Funds *</label>
+      <input type="text" id="sourceOfFunds" name="sourceOfFunds" required="required" />
+    </fieldset>
+
+    <fieldset>
+      <legend>Next of Kin</legend>
+
+      <label for="kinName">Full Name *</label>
+      <input type="text" id="kinName" name="kinName" required="required" />
+
+      <label for="kinRelation">Relationship *</label>
+      <input type="text" id="kinRelation" name="kinRelation" required="required" />
+
+      <label for="kinPhone">Phone Number *</label>
+      <input type="tel" id="kinPhone" name="kinPhone" required="required" />
+    </fieldset>
+
+    <fieldset>
+      <legend>Declaration</legend>
+      <p>
+        I hereby confirm that the above information is accurate and I agree to the terms and conditions of the bank. I understand that providing false information may lead to account rejection or closure.
+      </p>
+      <div class="signature-line">
+        <p>Applicant Signature</p>
+      </div>
+
+      <label for="signatureDate">Date</label>
+      <input type="date" id="signatureDate" name="signatureDate" required="required" />
+    </fieldset>
+
+    <div class="official-use">
+      <h3>For Official Use Only</h3>
+      <p>Account Number: ____________________________</p>
+      <p>Branch Code: _______________________________</p>
+      <p>Officer Name: ______________________________</p>
+      <p>Date Received: _____________________________</p>
+    </div>
+
+    <footer>
+      <p>&amp;copy; 2025 Tatua Bank Ltd. All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>

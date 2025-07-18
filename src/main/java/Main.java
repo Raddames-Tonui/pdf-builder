@@ -8,8 +8,7 @@ public class Main {
         System.out.println("Choose PDF to generate:");
         System.out.println("1 - P9 Report");
         System.out.println("2 - Account Statement");
-        System.out.print("Enter Number: ");
-
+        System.out.print("Enter your choice: ");
         int choice = scanner.nextInt();
 
         try {
