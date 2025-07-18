@@ -1,15 +1,27 @@
-import java.io.*;
 
-import com.openhtmltopdf.pdfboxout.PdfRendererBuilder;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Choose PDF to generate:");
+        System.out.println("1 - P9 Report");
+        System.out.println("2 - Account Statement");
+        System.out.print("Enter Number: ");
+
+        int choice = scanner.nextInt();
+
         try {
-            // Output pdf code...
-
-
+            if (choice == 1) {
+                PDFService.generateP9Report();
+            } else if (choice == 2) {
+                PDFService.generateAccountStatement();
+            } else {
+                System.out.println("Invalid choice.");
+            }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("Error generating PDF: " + e.getMessage());
         }
     }
 }
