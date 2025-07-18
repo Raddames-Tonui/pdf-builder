@@ -51,7 +51,7 @@ public class PDFService {
             // Supply HTML content to be converted
             builder.withHtmlContent(htmlContent, null);
 
-            // If there are SVGS
+            // If there are SVGS / Images
             builder.useSVGDrawer(new BatikSVGDrawer());
             builder.useUriResolver((baseUri, uri) -> {
                 if (uri.startsWith("assets/")) {
@@ -67,7 +67,6 @@ public class PDFService {
             // Set the page size to A4 landscape (11.69in x 8.27in)
             // This is the key part that ensures landscape orientation
             builder.useDefaultPageSize(11.69f, 8.27f, PdfRendererBuilder.PageSizeUnits.INCHES);
-
 
             // Start the PDF generation process
             builder.run();
